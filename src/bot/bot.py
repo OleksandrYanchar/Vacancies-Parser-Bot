@@ -2,11 +2,8 @@ import asyncio
 import csv
 import threading
 from aiogram import Bot, Dispatcher, types, F
-from src.configs.settings import TOKEN, IDS, csv_filename
+from src.configs.settings import TOKEN, IDS, csv_filename, bot, dp
 from src.bot.tasks import thread
-
-bot = Bot(token= TOKEN )
-dp = Dispatcher()
 
 async def clear_file():
     with open(csv_filename, mode='w', encoding='utf-8') as file:
