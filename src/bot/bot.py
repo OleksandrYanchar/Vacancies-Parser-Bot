@@ -19,7 +19,7 @@ async def read_csv():
             data = list(reader)
         return data
     except Exception as e:
-        print(f"Помилка при обробці CSV файлу: {str(e)}")
+        print(f"ERROR reading csv: {str(e)}")
         return []
 
 
@@ -45,11 +45,11 @@ async def send_messages():
             for chat_id in IDS:
                 try:
                     await bot.send_message(chat_id, text=message_text)
-                    print(f"Частина повідомлення відправлена в чат з ID: {chat_id}")
+                    print(f"part of messages where sent to: {chat_id}")
                     await asyncio.sleep(1)
                 except Exception as e:
                     print(
-                        f"Помилка відправлення повідомлення в чат з ID {chat_id}: {str(e)}"
+                        f"ERROR sending messages to chat: {chat_id}: {str(e)}"
                     )
 
             current_items = 0
