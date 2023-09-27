@@ -6,14 +6,14 @@
 
 ### Prerequisites
 
- Update the package list:
+ **Update the package list**:
 
 ```bash
 sudo apt update
 ```
       
- Clone this repository:
-
+ **Clone this repository**:
+**
 ```bash
 git clone https://github.com/OleksandrYanchar/Vacancies-Parser-Bot
 ```
@@ -37,12 +37,13 @@ pip3 install -r requirements.txt
 
 ### Here you have 2 choices:
 
+**for polling bot all time**
+
 ```bash
 python3 main.py
 ```
-for polling bot all time
+**for polling one time per day**
 
 ```bash
 celery -A my_schedule  worker --loglevel=info
 ```
-for polling one time per day
