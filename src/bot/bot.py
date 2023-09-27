@@ -1,8 +1,7 @@
 import asyncio
 import csv
-import threading
-from aiogram import Bot, Dispatcher, types, F
-from src.configs.settings import TOKEN, IDS, csv_filename, bot, dp
+from aiogram import types, F
+from src.configs.settings import  IDS, csv_filename, bot, dp
 from src.bot.tasks import thread
 
 
