@@ -17,14 +17,14 @@ or just for themselfes
 
 ### Feedback & Collaboration
 
-If you have any questions or suggestions, please contact us:
+If you have any questions or suggestions, please contact me:
 
-- Developer: Email: contact.oleksandryanchar@gamail.com, ,
+- Developer: Email: contact.oleksandryanchar@gamail.com, 
      [GitHub](https://github.com/OleksandrYanchar)
 
 ### Installation
 
-#### Please remember to create and populate the .env file with any type of installation(example in the main folder:env.example)
+#### Please remember to create and populate the .env file with any type of installation(example in the main folder:example.env)
 
 Detailed installation information can be found in 
 the [SETUP.md](SETUP.md) file.
