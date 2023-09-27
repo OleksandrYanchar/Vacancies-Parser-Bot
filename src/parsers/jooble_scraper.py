@@ -3,22 +3,28 @@ import re
 import csv
 from bs4 import BeautifulSoup
 
+
 class JoobleScraper:
     """
     Class with logic for parsing ua.jooble.org website to retrieve job vacancies.
-    """    
+    """
+
     def __init__(self, jooble_url, csv_filename):
         self.page_url = jooble_url
         self.csv_filename = csv_filename
         self.headers = {
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36'
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36"
         }
         """ Initialize the WorkUaParser class.
         :param jooble_url: URL to parse for job vacancies.
         :param csv_filename: Path to the CSV file where parsed data will be saved.
         """
+
     def check_matches(self, job_title):
-        match = re.search(rf'(?i)(\b(?:python|backend)\b.*\b(?:junior|trainee)\b|\b(?:junior|trainee)\b.*\b(?:python|backend)\b)', job_title)
+        match = re.search(
+            rf"(?i)(\b(?:python|backend)\b.*\b(?:junior|trainee)\b|\b(?:junior|trainee)\b.*\b(?:python|backend)\b)",
+            job_title,
+        )
         return bool(match)
 
     """
@@ -39,11 +45,11 @@ class JoobleScraper:
 
         try:
             if response.status_code == 200:
-                soup = BeautifulSoup(response.text, 'html.parser')
+                soup = BeautifulSoup(response.text, "html.parser")
                 elements = soup.find_all(class_="jkit_Efecu")
 
                 for element in elements:
-                    job_link = element['href']
+                    job_link = element["href"]
                     job_title = element.get_text(strip=True)
 
                     if job_link and job_title and self.check_matches(job_title):
@@ -64,5 +70,4 @@ class JoobleScraper:
 
         """
         Save the parsed job vacancies to a CSV file.
-        """    
-
+        """

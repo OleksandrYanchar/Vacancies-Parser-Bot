@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup
 import csv
 from src.configs.settings import key_words, ban_words
 
+
 class WorkUaParser:
     """
     Class with logic for parsing Work.ua website to retrieve job vacancies.
