@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import csv
-from src.configs.settings import key_words, ban_words, vacansies_txt
+from src.configs.settings import key_words, ban_words
 
 class WorkUaParser:
     """
@@ -19,7 +19,7 @@ class WorkUaParser:
         Initialize the WorkUaParser class.
 
         :param links_list: List of URLs to parse for job vacancies.
-        :param path_to_csv: Path to the CSV file where parsed data will be saved.
+        :param csv_filename: Path to the CSV file where parsed data will be saved.
         """
 
         self.links_list = links_list
@@ -107,8 +107,3 @@ class WorkUaParser:
 
         except Exception as e:
             print(e)
-
-    def save_to_txt(self):
-        with open(vacansies_txt, 'a', encoding='utf-8') as file:
-            for vacancy in self.all_vacancies:
-                file.write(f"{vacancy['vacancy_link']} - {vacancy['vacancy_title']}\n\n\n")
