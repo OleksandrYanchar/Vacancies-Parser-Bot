@@ -1,7 +1,6 @@
-import asyncio
-from src.configs.settings import TOKEN
+import asyncio  
+from src.bot.bot import bot_main
 
-if __name__=='__main__':
-    from src.bot.bot import main
-    asyncio.run(main())
-
+#Starts polling bot
+if __name__ == "__main__":
+    asyncio.run(bot_main())
