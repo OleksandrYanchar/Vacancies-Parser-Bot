@@ -1,15 +1,14 @@
 from src.parsers.jobs_scraper import JobsScraper
 from src.parsers.jooble_scraper import JoobleScraper
 from src.parsers.workua_scraper import WorkUaParser
-from src.configs.settings import jobs_url, jooble_url, vacansies_txt, csv_filename, urls
+from src.configs.settings import jobs_url, jooble_url, csv_filename, urls
 
 def joobl_launcher():
+    """
+    Initiate parsing proces of ua.jooble.org and save to csv 
+    """
     job_scraper = JoobleScraper(jooble_url, csv_filename)
     vacancies = job_scraper.get_vacancies_from_page()
-
-    with open(vacansies_txt, 'a', encoding='utf-8') as file:
-        for vacancy in vacancies:
-            file.write(vacancy + '\n\n\n')
 
     for vacancy in vacancies:
         job_link, job_title = vacancy.split(" - ", 1)
@@ -18,12 +17,11 @@ def joobl_launcher():
     print("Посилання та назви вакансій з Jooble були записані у файл 'vacancies.txt'")
 
 def jobs_launcher():
+    """
+    Initiate parsing proces of jobs.dou.ua  and save to csv 
+    """
     job_scraper = JobsScraper(jobs_url, csv_filename)
     vacancies = job_scraper.get_vacancies_from_page()
-
-    with open(vacansies_txt, 'a', encoding='utf-8') as file:
-        for vacancy in vacancies:
-            file.write(vacancy + '\n\n\n')
 
     for vacancy in vacancies:
         job_link, job_title = vacancy.split(" - ", 1)
@@ -40,5 +38,4 @@ def workua_launcher():
     parser.get_all_vacancies()
     parser.remove_duplicates()
     parser.save_to_csv()
-    parser.save_to_txt()
     print("Посилання та назви вакансій з Workua були записані у файл 'vacancies.txt'")
