@@ -1,4 +1,5 @@
-# Vacancies Parser Telegram  Bot: A Tribute to Roman Lokatir
+# Vacancies Parser Telegram  Bot
+
 ![picture alt](scrap_example1.png)
 
 Welcome to the Vacancies Parser Telegram  Bot, a whicn helps to monitor vacancies for python developers on 3 popular websites in Ukraine(Work.ua, Jooble.org and Jobbs.dou ) This project is designed  using Aiogram, a leading framework for the Telegram Bot API, requests  and bs4 libraries to scrap websites looking wor vacancies and Celery to optimise resources usage.
