@@ -19,7 +19,7 @@ or just for themselfes
 
 If you have any questions or suggestions, please contact us:
 
-- Developer: Email: contact.oleksandryanchar.com, ,
+- Developer: Email: contact.oleksandryanchar@gamail.com, ,
      [GitHub](https://github.com/OleksandrYanchar)
 
 ### Installation
