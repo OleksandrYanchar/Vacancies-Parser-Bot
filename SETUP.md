@@ -21,7 +21,7 @@ git clone https://github.com/OleksandrYanchar/Vacancies-Parser-Bot
 ### Here you have 2 ways:
 
 ### Docker:
-**(by defoult polling one time per day, to change it coment or delete last line in docker-compose.yml file and uncoment previous one )**
+**(by defoult polling one time per day, to change it comment or delete last line in Dockerfile file and uncoment previous one )**
 
 default build:
 ```bash
