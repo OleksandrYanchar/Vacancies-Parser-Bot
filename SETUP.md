@@ -13,11 +13,28 @@ sudo apt update
 ```
       
  **Clone this repository**:
-**
+
 ```bash
 git clone https://github.com/OleksandrYanchar/Vacancies-Parser-Bot
 ```
-### Set up a virtual environment:
+
+### Here you have 2 ways:
+
+### Docker:
+**(by defoult polling one time per day, to change it coment or delete last line in docker-compose.yml file and uncoment previous one )**
+
+default build:
+```bash
+docker-compose up --build
+```
+build and run in the background:
+```bash
+docker-compose up -d --build
+```
+
+### Continue manually:
+
+Set up a virtual environment:
 
 ```bash
 python3 -m venv venv
@@ -37,12 +54,12 @@ pip3 install -r requirements.txt
 
 ### Here you have 2 choices:
 
-**for polling bot all time**
+for polling bot all time
 
 ```bash
 python3 main.py
 ```
-**for polling one time per day**
+for polling one time per day
 
 ```bash
 celery -A my_schedule  worker --loglevel=info
