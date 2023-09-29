@@ -1,4 +1,5 @@
 import asyncio
+from datetime import datetime
 import csv
 from aiogram import types, F
 from src.configs.settings import  IDS, csv_filename, bot, dp
@@ -68,6 +69,8 @@ async def send_messages():
 # handles /start command to get users ID
 @dp.message(F.text == "/start")
 async def lol(message: types.Message):
+    if message.from_user.id in IDS:
+        await message.answer(str(datetime.now()))
     await message.answer(str(message.from_user.id))
 
 
