@@ -25,11 +25,11 @@ git clone https://github.com/OleksandrYanchar/Vacancies-Parser-Bot
 
 default build:
 ```bash
-docker-compose up --build
+sudo docker-compose up --build
 ```
 build and run in the background:
 ```bash
-docker-compose up -d --build
+sudo docker-compose up -d --build
 ```
 
 ### Continue manually:
