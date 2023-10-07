@@ -95,6 +95,8 @@ async def bot_main():
 
 # function for celery task which executes at specifed time and than stops bot
 async def bot_schedule():
+    for ID in IDS:
+        await bot.send_message(ID, "#VACANCIES")
     await bot_tasks()
     await dp.stop_polling(bot)
     await dp.start_polling(bot, skip_updates=True)
