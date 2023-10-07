@@ -18,7 +18,7 @@ def run_my_script():
 
 
 # setups schedule for task
-schedule.every().day.at("13:47").do(run_my_script)
+schedule.every().day.at("08:27").do(run_my_script)
 
 # runs task use command celery -A my_schedule  worker --loglevel=info
 while True:
